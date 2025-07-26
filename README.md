@@ -38,14 +38,39 @@ A sophisticated customer support chatbot for e-commerce platforms, built with Fa
 
 ## 🚀 Quick Start
 
-### 1. Clone the Repository
+### Option 1: Docker Deployment (Recommended)
+
+```bash
+# Clone the repository
+git clone <your-repo-url>
+cd Think41-Task
+
+# Set up environment variables
+copy docker.env .env
+# Edit .env and add your GROQ_API_KEY
+
+# Run the setup script
+# On Windows:
+.\docker-setup.ps1
+
+# On Linux/Mac:
+chmod +x docker-setup.sh
+./docker-setup.sh
+
+# Or manually:
+docker-compose up --build -d
+```
+
+### Option 2: Manual Setup
+
+#### 1. Clone the Repository
 
 ```bash
 git clone <your-repo-url>
 cd Think41-Task
 ```
 
-### 2. Backend Setup
+#### 2. Backend Setup
 
 ```bash
 cd backend
@@ -71,7 +96,7 @@ python load_data.py
 python main.py
 ```
 
-### 3. Frontend Setup
+#### 3. Frontend Setup
 
 ```bash
 cd frontend
@@ -83,7 +108,7 @@ npm install
 npm run dev
 ```
 
-### 4. Access the Application
+#### 4. Access the Application
 
 - **Frontend**: [http://localhost:3000](http://localhost:3000)
 - **Backend API**: [http://localhost:8000](http://localhost:8000)
@@ -203,6 +228,25 @@ Think41-Task/
 4. **CORS Errors**
    - Verify ALLOWED_ORIGINS in `.env`
    - Check frontend URL matches configuration
+
+### Docker Issues
+
+1. **Docker Not Starting**
+   - Ensure Docker Desktop is running
+   - Check Docker service status
+   - Verify Docker Compose is installed
+
+2. **Port Conflicts**
+   - Check if ports 3000, 8000, or 3306 are already in use
+   - Stop conflicting services or change ports in docker-compose.yml
+
+3. **Container Build Failures**
+   - Clear Docker cache: `docker system prune -a`
+   - Rebuild containers: `docker-compose build --no-cache`
+
+4. **Environment Variables**
+   - Ensure `.env` file exists and contains valid GROQ_API_KEY
+   - Check file permissions on `.env` file
 
 ## 🤝 Contributing
 

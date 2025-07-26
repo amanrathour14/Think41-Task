@@ -4,6 +4,7 @@
 .env.development.local
 .env.test.local
 .env.production.local
+docker.env
 
 # Python
 __pycache__/
@@ -133,4 +134,8 @@ Thumbs.db
 
 # Data files (optional - remove if you want to include sample data)
 data/
-*.csv 
+*.csv
+
+# Docker
+.dockerignore
+docker-compose.override.yml 
