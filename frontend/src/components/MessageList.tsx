@@ -30,13 +30,17 @@ const MessageList: React.FC<MessageListProps> = ({ messages, loading }) => {
       ))}
       
       {loading && (
-        <div className="flex items-center space-x-2 text-gray-500">
-          <div className="flex space-x-1">
-            <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce"></div>
-            <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-            <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+        <div className="flex justify-start">
+          <div className="bg-white text-gray-800 border border-gray-200 rounded-lg rounded-bl-none shadow-sm px-4 py-2">
+            <div className="flex items-center space-x-2">
+              <div className="flex space-x-1">
+                <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce"></div>
+                <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+              </div>
+              <span className="text-sm text-gray-500">AI is thinking...</span>
+            </div>
           </div>
-          <span className="text-sm">AI is thinking...</span>
         </div>
       )}
     </div>

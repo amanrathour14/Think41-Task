@@ -1,11 +1,14 @@
 import React from 'react';
-import SimpleChat from './components/SimpleChat';
+import ChatWindow from './components/ChatWindow';
+import { ChatProvider } from './context/ChatContext';
 import './index.css';
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <SimpleChat />
+      <ChatProvider>
+        <ChatWindow />
+      </ChatProvider>
     </div>
   );
 };

@@ -50,7 +50,7 @@ const ChatWindow: React.FC = () => {
 
   return (
     <div className="flex h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-      {/* Conversation History Panel */}
+      {/* Conversation History Panel - Milestone 8 */}
       <div className={`${showHistory ? 'w-80' : 'w-0'} transition-all duration-300 ease-in-out overflow-hidden bg-white shadow-lg`}>
         <ConversationHistory 
           conversations={conversations}
@@ -68,14 +68,15 @@ const ChatWindow: React.FC = () => {
             <button
               onClick={() => setShowHistory(!showHistory)}
               className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              title="Toggle conversation history"
             >
               <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>
             <div>
-              <h1 className="text-xl font-semibold text-gray-800">E-commerce Support Chat</h1>
-              <p className="text-sm text-gray-500">AI-powered customer support</p>
+              <h1 className="text-xl font-semibold text-gray-800">🛍️ E-commerce Support Chat</h1>
+              <p className="text-sm text-gray-500">AI-powered customer support assistant</p>
             </div>
           </div>
           
@@ -90,13 +91,13 @@ const ChatWindow: React.FC = () => {
           </button>
         </div>
 
-        {/* Messages Area */}
+        {/* Messages Area - Milestone 6: MessageList component */}
         <div className="flex-1 overflow-hidden">
           <MessageList messages={messages} loading={loading} />
           <div ref={messagesEndRef} />
         </div>
 
-        {/* Input Area */}
+        {/* Input Area - Milestone 6: UserInput component */}
         <div className="bg-white border-t border-gray-200 p-4">
           <UserInput onSendMessage={handleSendMessage} loading={loading} />
         </div>
