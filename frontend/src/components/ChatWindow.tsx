@@ -12,11 +12,17 @@ const ChatWindow: React.FC = () => {
     conversations, 
     currentConversationId,
     selectConversation,
-    createNewConversation 
+    createNewConversation,
+    loadConversations
   } = useChatContext();
   
   const [showHistory, setShowHistory] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  // Load conversations on component mount
+  useEffect(() => {
+    loadConversations();
+  }, [loadConversations]);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
